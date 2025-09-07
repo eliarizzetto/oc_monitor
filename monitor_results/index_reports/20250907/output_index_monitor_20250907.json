@@ -1,0 +1,19 @@
+{
+    "endpoint": "https://test.opencitations.net/index/sparql",
+    "collection": "OpenCitations Index",
+    "datetime": "07/09/2025, 03:35:23",
+    "running_time": 0.23935246467590332,
+    "config_fp": "index_monitor_config.json",
+    "monitoring_results": [
+        {
+            "label": "circular_citation",
+            "description": "The same entity appears as both citing and cited entity for the same Citation.",
+            "query": "PREFIX cito: <http://purl.org/spar/cito/>\n\nSELECT ?citation WHERE {\n  ?citation a cito:Citation ;\n    cito:hasCitingEntity ?entity ;\n    cito:hasCitedEntity ?entity .\n}\nLIMIT 1",
+            "run": {
+                "got_result": false,
+                "running_time": 0.2392432689666748,
+                "error": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+            }
+        }
+    ]
+}
